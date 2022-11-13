@@ -16,7 +16,7 @@ module.exports = {
                     use: ['css-loader', 'sass-loader']
                 })
             }
-        ]
+               ]
     },
     plugins: [
         new ExtractTextPlugin('style.css')

@@ -1,5 +1,93 @@
-$bg-color: orange;
+//form size
+$form-height: 60px;
+$form-padding: $form-height/3 $form-height/2;
+$form-width: 600px;
+$margin: 15px 5px;
+
+//colors
+$btn-bg-color: red;
+$btn-font-color: white;
+$form-bg-color: silver;
+$bg-color: black;
+$border: 2px solid $btn-font-color;
+
+//font sizes
+$font-web-size: 16px;
+$font-phone-size: 14px;
+
 
 body {
-  background: $bg-color;
+  background-color: $bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+form {
+  background-color: $form-bg-color;
+  width: $form-width;
+  height: $form-height ;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: $border;
+  transform: skew(-20deg);
+  margin: $margin;
+  box-sizing: border-box;
+}
+
+.form_block__input_data {
+  padding: $form-padding;
+  width: 65%;
+  border: none;
+  background-color: transparent;
+  transform: skew(20deg);
+  font-size: $font-web-size;
+}
+
+input:focus{
+  outline: none;
+}
+
+.form_block__button_container {
+  background-color: $btn-bg-color;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_block__button {
+  padding: $form-padding;
+  border: none;
+  background: transparent;
+  transform: skew(20deg);
+  color: $btn-font-color;
+  text-transform: uppercase;
+  font-size: $font-web-size;
+}
+
+@media screen and (max-width: 390px) {
+  form {
+    width: 100%;
+    transform: none;
+  }
+  .form_block__input_data {
+    transform: none;
+    font-size: $font-phone-size;
+    border-right: $border;
+  }
+  .form_block__button_container {
+    transform: none;
+  }
+
+  .form_block__button {
+    transform: none;
+    font-size: $font-phone-size;
+  }
+  #icon {
+    display: none;
+  }
+}
+

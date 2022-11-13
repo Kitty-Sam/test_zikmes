@@ -6,14 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='dist/style.css'>
-    <script type="text/javascript" src="dist/bundle.js"></script>
-    <title>test</title>
+    <title>webpack</title>
+
 </head>
 <body>
-<h1>
-    Nice to meet you here
-</h1>
+<form name="phoneForm" action="https://google.com" onsubmit="validateForm()" method="get">
+    <input placeholder="Ваш номер..." type="tel" name="phone" class="form_block__input_data" />
+    <div class="form_block__button_container">
+    <input  type="submit" value="заказать" class="form_block__button"/>
+        <i class="fas fa-solid fa-trash" id="icon"></i>
+    </div>
+</form>
 
+
+<script src="dist/bundle.js"></script>
+<script  src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
+<script>
+    function validateForm () {
+        let x = document.forms["phoneForm"]["phone"].value;
+        if (x === "" || typeof x === "string") {
+            alert("Incorrect data");
+            document.forms["phoneForm"]["phone"].value = ""
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
 
