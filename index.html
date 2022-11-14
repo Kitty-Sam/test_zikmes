@@ -10,10 +10,10 @@
 
 </head>
 <body>
-<form name="phoneForm" action="https://google.com" onsubmit="validateForm()" method="get">
-    <input placeholder="Ваш номер..." type="tel" name="phone" class="form_block__input_data" />
+<form name="phoneForm" action="https://google.com/search" method="get">
+    <input placeholder="Ваш номер..." type="tel" name="q" class="form_block__input_data" required/>
     <div class="form_block__button_container">
-    <input  type="submit" value="заказать" class="form_block__button"/>
+    <input  type="submit" value="заказать" class="form_block__button" onclick="validateForm()"/>
         <i class="fas fa-solid fa-trash" id="icon"></i>
     </div>
 </form>
@@ -21,16 +21,6 @@
 
 <script src="dist/bundle.js"></script>
 <script  src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"></script>
-<script>
-    function validateForm () {
-        let x = document.forms["phoneForm"]["phone"].value;
-        if (x === "" || typeof x === "string") {
-            alert("Incorrect data");
-            document.forms["phoneForm"]["phone"].value = ""
-            return false;
-        }
-    }
-</script>
 </body>
 </html>
 
