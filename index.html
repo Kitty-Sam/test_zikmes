@@ -10,10 +10,13 @@
 
 </head>
 <body>
-<form name="phoneForm" action="https://google.com/search" method="get">
-    <input placeholder="Ваш номер..." type="tel" name="q" class="form_block__input_data" required/>
+
+<form name="phone-form" method="post" id="contact-form">
+    <input placeholder="Ваш номер..." type="tel" name="phone"  id="phone" class="form_block__input_data" required=""
+           oninvalid="this.setCustomValidity('Please, enter valid phone number without international code')"
+           oninput="setCustomValidity('')"/>
     <div class="form_block__button_container">
-    <input  type="submit" value="заказать" class="form_block__button" onclick="validateForm()"/>
+    <input type="submit" value="заказать" class="form_block__button"/>
         <i class="fas fa-solid fa-trash" id="icon"></i>
     </div>
 </form>
